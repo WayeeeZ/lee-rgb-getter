@@ -1,20 +1,15 @@
 package leegetter
 
 import (
-	"encoding/json"
 	"errors"
 	"strings"
 )
 
-var leeList []Lee
-
 type Lee struct {
-	Name string "json:\"name\""
-	Rgb  string "json:\"rgb\""
-}
-
-func init() {
-	_ = json.Unmarshal([]byte(LeeJsonString), &leeList)
+	Name  string
+	Red   uint8
+	Green uint8
+	Blue  uint8
 }
 
 func GetLee(name string) (Lee, error) {
